@@ -539,6 +539,70 @@
       font-size: 0.94rem;
     }
 
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .screenshot-card {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid rgba(23, 34, 31, 0.09);
+      box-shadow: 0 18px 60px rgba(23, 34, 31, 0.07);
+    }
+
+    .screenshot-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 10px solid #17221f;
+      background: rgba(243, 234, 219, 0.9);
+      box-shadow: 0 22px 58px rgba(23, 34, 31, 0.18);
+      aspect-ratio: 9 / 19.5;
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .screenshot-placeholder {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(217, 154, 78, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(243, 234, 219, 0.88));
+    }
+
+    .screenshot-placeholder strong {
+      display: block;
+      color: var(--brand);
+      font-size: 1.18rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .screenshot-card h3 {
+      margin: 18px 0 6px;
+      font-size: 1.22rem;
+      letter-spacing: -0.04em;
+    }
+
+    .screenshot-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .privacy-band {
       padding: 46px;
       border-radius: 38px;
@@ -693,7 +757,8 @@
       }
 
       .feature-grid,
-      .use-grid {
+      .use-grid,
+      .screenshots-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -743,12 +808,14 @@
       }
 
       .feature-grid,
-      .use-grid {
+      .use-grid,
+      .screenshots-grid {
         grid-template-columns: 1fr;
       }
 
       .feature-card,
       .panel,
+      .screenshot-card,
       .privacy-band,
       .cta-card {
         padding: 26px;
@@ -772,6 +839,7 @@
         <nav class="nav-links" aria-label="Page links">
           <a href="#concept">Concept</a>
           <a href="#structures">Structures</a>
+          <a href="#screenshots">Screenshots</a>
           <a href="#privacy">Privacy</a>
           <a href="#download" class="nav-cta">Coming soon</a>
         </nav>
@@ -900,6 +968,49 @@
           </div>
         </div>
       </section>
+
+
+      <section id="screenshots" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Screenshots</div>
+            <h2>See each structure in action.</h2>
+            <p class="section-lead">
+              Add your World, Pyramid, and Tree screenshots here so visitors can immediately understand how Structree looks and feels on iPhone.
+            </p>
+          </div>
+
+          <div class="screenshots-grid">
+            <article class="screenshot-card">
+              <div class="screenshot-frame">
+                <!-- Replace ./screenshots/world.png with your actual World screenshot path. -->
+                <img src="./screenshots/world.png" alt="Structree World page screenshot" onerror="this.remove(); this.parentElement.innerHTML = '<div class=&quot;screenshot-placeholder&quot;><div><strong>World screenshot</strong><span>Place ./screenshots/world.png here</span></div></div>';" />
+              </div>
+              <h3>World</h3>
+              <p>Show the broad workspace where ideas, contexts, and related elements are captured together.</p>
+            </article>
+
+            <article class="screenshot-card">
+              <div class="screenshot-frame">
+                <!-- Replace ./screenshots/pyramid.png with your actual Pyramid screenshot path. -->
+                <img src="./screenshots/pyramid.png" alt="Structree Pyramid page screenshot" onerror="this.remove(); this.parentElement.innerHTML = '<div class=&quot;screenshot-placeholder&quot;><div><strong>Pyramid screenshot</strong><span>Place ./screenshots/pyramid.png here</span></div></div>';" />
+              </div>
+              <h3>Pyramid</h3>
+              <p>Show how abstract ideas can be broken down into clearer layers from top to bottom.</p>
+            </article>
+
+            <article class="screenshot-card">
+              <div class="screenshot-frame">
+                <!-- Replace ./screenshots/tree.png with your actual Tree screenshot path. -->
+                <img src="./screenshots/tree.png" alt="Structree Tree page screenshot" onerror="this.remove(); this.parentElement.innerHTML = '<div class=&quot;screenshot-placeholder&quot;><div><strong>Tree screenshot</strong><span>Place ./screenshots/tree.png here</span></div></div>';" />
+              </div>
+              <h3>Tree</h3>
+              <p>Show branching relationships so users can see how ideas grow and connect over time.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
 
       <section id="privacy" class="section">
         <div class="container">
